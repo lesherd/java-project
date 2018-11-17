@@ -4,7 +4,8 @@ pipeline {
 	stages {
   	  stage('Unit Tests') {
 		steps {
-	          sh 'ant -f test.xml -v'
+	          sh 'aws --version'
+		  sh 'ant -f test.xml -v'
 		  junit 'reports/result.xml'   	
 		}
 	  }
@@ -15,7 +16,6 @@ pipeline {
 	  }	
   	  stage('Deploy') {
 		steps {
-		  sh '/usr/local/bin/aws --version'
                   sh '/usr/local/bin/aws s3 cp rectangle-${BUILD_NUMBER}.jar s3://lesherd-assignment-9/rectangle-${BUILD_NUMBER}.jar'			
 		}
 	  }		
