@@ -16,7 +16,7 @@ pipeline {
 	  }	
   	  stage('Deploy') {
 		steps {
-			sh 'aws s3 cp rectangle-${BUILD_NUMBER}.jar s3://lesherd-assignment-9/${BUILD_NUMBER}.jar'
+			sh '$(which aws) s3 cp rectangle-${BUILD_NUMBER}.jar s3://lesherd-assignment-9/rectangle-${BUILD_NUMBER}.jar'
 		}
 	  }		
 	}
