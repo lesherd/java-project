@@ -1,5 +1,5 @@
 pipeline {
-	agent any
+	agent { label '${NODE_NAME}' }
 
 	stages {
   	  stage('Unit Tests') {
