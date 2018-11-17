@@ -13,6 +13,11 @@ pipeline {
 		steps {
 	          sh 'ant -f build.xml -v'
 		}
+	  }	
+  	  stage('Deploy') {
+		steps {
+	          sh "aws s3 cp rectangle-$env.BUILD_ID.jar s3://lesherd-assignment-9/$env.BUILD_ID.jar"
+		}
 	  }		
 	}
 }
