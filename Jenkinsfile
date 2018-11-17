@@ -1,5 +1,5 @@
 pipeline {
-	agent { label '${NODE_NAME}' }
+	agent { label 'linux' }
 
 	stages {
   	  stage('Unit Tests') {
