@@ -15,7 +15,8 @@ pipeline {
 	  }	
   	  stage('Deploy') {
 		steps {
-		  sh 'aws --version'
+		  sh '/usr/local/bin/aws --version'
+                  sh '/usr/local/bin/aws s3 cp rectangle-${BUILD_NUMBER}.jar s3://lesherd-assignment-9/rectangle-${BUILD_NUMBER}.jar'			
 		}
 	  }		
 	}
