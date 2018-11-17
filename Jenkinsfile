@@ -15,7 +15,7 @@ pipeline {
 	  }	
   	  stage('Deploy') {
 		steps {
-			sh 'aws s3 cp ${WORKSPACE}/${JOB_NMAE}/dist/rectangle-${BUILD_NUMBER}.jar s3://lesherd-assignment-9/rectangle-${BUILD_NUMBER}.jar'			
+			sh 'aws s3 cp ${WORKSPACE}/${JOB_NAME}/dist/rectangle-${BUILD_NUMBER}.jar s3://lesherd-assignment-9/rectangle-${BUILD_NUMBER}.jar'			
 		}
 	  }
 	  stage('Report') {
