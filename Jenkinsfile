@@ -6,21 +6,6 @@ pipeline {
 		steps {
 			sh 'ant -f test.xml -v'
 		}
-	  }
-	  stage('Build') {
-		steps {
-			
-		}
-	  }
-	  stage('Deploy') {
-		steps {
-			
-		}
-	  }
-	  stage('Report') {
-		steps {
-			
-		}
 	  }	  
 	}
 }
