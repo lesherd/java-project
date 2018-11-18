@@ -4,6 +4,7 @@ pipeline {
 	stages {
   	  stage('Unit Tests') {
 		steps {
+		  echo 'in Unit Tests'	
 		  sh 'ant -f test.xml -v'
 		  junit 'reports/result.xml' 	
 		}
